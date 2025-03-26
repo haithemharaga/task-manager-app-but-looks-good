@@ -1,3 +1,4 @@
+// Client/src/context/AuthContext.js
 import React, { createContext, useReducer, useEffect } from 'react';
 import axios from 'axios';
 
@@ -17,6 +18,12 @@ const authReducer = (state, action) => {
       return {
         ...state,
         isAuthenticated: true,
+        user: action.payload,
+        loading: false
+      };
+    case 'USER_UPDATED':
+      return {
+        ...state,
         user: action.payload,
         loading: false
       };
@@ -116,6 +123,23 @@ export const AuthProvider = ({ children }) => {
     }
   };
   
+  // Update user profile
+  const updateUser = async (userData) => {
+    try {
+      const res = await axios.put('/api/users/profile', userData);
+      
+      dispatch({
+        type: 'USER_UPDATED',
+        payload: res.data
+      });
+      
+      return res.data;
+    } catch (err) {
+      console.error('Failed to update user profile:', err);
+      throw err;
+    }
+  };
+  
   // Logout
   const logout = () => {
     dispatch({ type: 'LOGOUT' });
@@ -142,7 +166,8 @@ export const AuthProvider = ({ children }) => {
         register,
         login,
         logout,
-        clearError
+        clearError,
+        updateUser
       }}
     >
       {children}
