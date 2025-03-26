@@ -1,0 +1,155 @@
+.sidebar {
+    width: 280px;
+    background-color: var(--background-card);
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    height: calc(100vh - 72px);
+    position: sticky;
+    top: 72px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) var(--background-light);
+  }
+  
+  .sidebar::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .sidebar::-webkit-scrollbar-track {
+    background: var(--background-light);
+  }
+  
+  .sidebar::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+  }
+  
+  .sidebar-container {
+    padding: 1.5rem;
+  }
+  
+  .sidebar-section {
+    margin-bottom: 2rem;
+  }
+  
+  .sidebar-heading {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+  }
+  
+  .sidebar-nav {
+    list-style: none;
+  }
+  
+  .sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: var(--radius);
+    transition: var(--transition);
+    margin-bottom: 0.5rem;
+  }
+  
+  .sidebar-link:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  
+  .sidebar-link.active {
+    background-color: rgba(0, 230, 255, 0.1);
+    color: var(--primary-color);
+  }
+  
+  .status-circle {
+    font-size: 0.6rem;
+  }
+  
+  .status-todo {
+    color: var(--status-todo);
+  }
+  
+  .status-in-progress {
+    color: var(--status-in-progress);
+  }
+  
+  .status-review {
+    color: var(--status-review);
+  }
+  
+  .status-completed {
+    color: var(--status-completed);
+  }
+  
+  .task-count {
+    margin-left: auto;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 0.15rem 0.5rem;
+    border-radius: 10px;
+    font-size: 0.75rem;
+  }
+  
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .tag {
+    padding: 0.4rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  .tag:hover {
+    opacity: 0.8;
+  }
+  
+  .tag-work {
+    background-color: #3498db;
+    color: white;
+  }
+  
+  .tag-personal {
+    background-color: #9b59b6;
+    color: white;
+  }
+  
+  .tag-urgent {
+    background-color: #e74c3c;
+    color: white;
+  }
+  
+  .tag-feature {
+    background-color: #2ecc71;
+    color: white;
+  }
+  
+  .tag-bug {
+    background-color: #f39c12;
+    color: white;
+  }
+  
+  .sidebar-add-task {
+    margin-top: 1rem;
+  }
+  
+  .btn-full {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: static;
+      border-right: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+  }
