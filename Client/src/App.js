@@ -1,3 +1,4 @@
+// Client/src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { TaskProvider } from './context/TaskContext';
@@ -41,3 +42,5 @@ function App() {
     </AuthProvider>
   );
 }
+
+export default App; // Add this export statement
